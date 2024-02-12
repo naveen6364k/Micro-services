@@ -1,0 +1,36 @@
+
+server:
+  port: 8084
+
+spring :
+  application:
+    name: screening-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/nfc
+    username: root
+    password: admin@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy=org: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,beans
+
+
